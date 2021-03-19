@@ -41,3 +41,26 @@ console.log(cats);
 cats.forEach((element) => {
   console.log(`Il gatto dal nome ${element.nome} è di colore ${element.colore}`);
 });
+
+// Milestone 2
+// Dividere i gatti in due contenitori distinti in base al sesso
+const mCats = cats.filter((element) => element.sesso == 'maschio');
+const fCats = cats.filter((element) => element.sesso == 'femmina');
+
+console.log(mCats);
+console.log(fCats);
+console.log($('#listaGatti'));
+console.log($('#ciao'));
+$('#ciao').text('miao');
+// e aggiungere a fianco di ogni gattino un fiocco colorato di rosa, se femmina, o di blu, se maschio
+// mCats.forEach((element) => {
+//   if (element.sesso == 'maschio') {
+//     $('#listaGatti').append(`<li> ${element.nome} <i class="fas fa-ribbon blu"></i> </li>`);
+//   } else {
+//     $('#listaGatti').append(`<li> ${element.nome} <i class="fas fa-ribbon rosa"></i> </li>`);
+//   }
+// });
+
+
+
+// Il colore del fiocco deve essere più tenue se il gatto è più giovane, più scuro se il gatto è più vecchio.
