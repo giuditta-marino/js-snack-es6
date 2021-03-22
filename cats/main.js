@@ -52,7 +52,7 @@ $(document).ready(function(){
   console.log(mCats);
   console.log(fCats);
   console.log($('#listaGatti'));
-  // e aggiungere a fianco di ogni gattino un fiocco colorato di rosa, se femmina, o di blu, se maschio  
+  // e aggiungere a fianco di ogni gattino un fiocco colorato di rosa, se femmina, o di blu, se maschio
     // se il gatto ha tre o meno anni, il fiocco avrà opacità più tenue
   let coloreFiocco;
   let opacity;
@@ -77,8 +77,34 @@ $(document).ready(function(){
     $('#listaGattiDue').append(`<li> Gatto ${element.nome} <i class="fas fa-ribbon ${coloreFiocco} ${opacity}"></i></li>`)
   });
 
+  // Milestone 3
+  // Creare un nuovo array con prima tutti i gattini femmina e poi tutti i gattini maschio,
 
+  orderedCats = [...fCats, ...mCats];
+  console.log(orderedCats);
 
+  // inserendo solamente nome e colore e colore e opacità del fiocco per ogni gatto.
+  const newGatti = orderedCats.map((cat, index, array) => {
+    // destrutturo cat inserendo solo le proprieta nome e colore
+    const {nome, colore} = cat;
 
+    // assegno i valori ad opacity
+    let opacity;
+    if (cat.eta <= 3) {
+      opacity = 'light'
+    } else {
+      opacity = 'dark'
+    }
+
+    // rimappo l'array
+    let obj = {
+      nome,
+      colore,
+      opacity
+    }
+    return obj;
+  });
+
+  console.log(newGatti);
 
 })
