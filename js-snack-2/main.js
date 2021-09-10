@@ -49,8 +49,35 @@ $(document).ready(function(){
     console.log(myArguments);
   }
 
+  // Progettate un algoritmo in JavaScript che stampi tutte le coppie di numeri naturali la cui somma è 30.
 
+  let somma = 30;
 
+  for (let i = 0; i <= somma; i++) {
+    console.log(somma, i);
+    somma--;
+  }
+
+  // Inserire N coppie di numeri reali, contare quelle che generano un prodotto negativo, positivo oppure uguale a zero, ma senza eseguire l’operazione.
+
+  var n = parseInt(prompt('quante coppie di numeri vuoi inserire?'));
+
+  var prodPos = 0, prodN = 0, prodNeg = 0;
+  for (var i = 0; i < n; i++){
+    var a = parseInt(prompt('inserisci il primo numero'));
+    var b = parseInt(prompt('inserisci il secondo numero'));
+    if ((a > 0 && b > 0) || (a < 0 && b < 0)) {
+      prodPos++;
+    } else if (a == 0 || b == 0){
+      prodN++;
+    } else {
+      prodNeg++;
+    }
+  }
+
+  console.log(prodPos);
+  console.log(prodN);
+  console.log(prodNeg);
 
 
 })
